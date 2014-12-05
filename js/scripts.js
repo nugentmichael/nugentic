@@ -317,40 +317,31 @@ jQuery(document).ready(function() {
 	/*-----------------------------------------------------------------------------------*/
 
 	/* Initalize Twitter Feed */
-		$('#twitter').tweetable({
-			username: 'michaelnugent', 
-			time: true,
-			limit: 5,
-			replies: false,
-			loading: 'Pacience is an art...' ,
-			position: 'append',
-			failed: "Sorry, twitter is currently unavailable for this user.",
-			html5: true,
-			onComplete:function($ul){
-				$('time').timeago();
-				var ul = $("#twitter").find(".tweetList");
-				var ticker = function() {
-				setTimeout(function() {
-					var top = ul.position().top;
-					var h = ul.height();
-					var incr = (h / ul.children().length);
-					var newTop = top - incr;
-					if (h + newTop <= 0) newTop = 0;
-					ul.animate( {top: newTop}, 500 );
-					ticker();
-				}, 7500);
-				};
+	$('#twitter').tweetable({
+		username: 'michaelnugent', 
+		time: true,
+		limit: 5,
+		replies: false,
+		loading: 'Patience is an art...' ,
+		position: 'append',
+		failed: "Womp Womp. It seems that Twitter is ignoring my request.",
+		html5: true,
+		onComplete:function($ul){
+			$('time').timeago();
+			var ul = $("#twitter").find(".tweetList");
+			var ticker = function() {
+			setTimeout(function() {
+				var top = ul.position().top;
+				var h = ul.height();
+				var incr = (h / ul.children().length);
+				var newTop = top - incr;
+				if (h + newTop <= 0) newTop = 0;
+				ul.animate( {top: newTop}, 500 );
 				ticker();
-			}
-		});
-	
-	/* Initalize Flickr Feed */
-	jQuery('#flickr').jflickrfeed({
-		limit: 12,
-		qstrings: {
-			id: '52421339@N00'
-		},
-		itemTemplate: '<div class="col-xs-3 col-sm-2 flickr-photo"><a href="{{image_b}}"target="_blank"> <img src="{{image_m}}" alt="{{title}}" /> </a></div>'
+			}, 7500);
+			};
+			ticker();
+		}
 	});
 	
 	/* Initalize Instagram Feed */
@@ -361,6 +352,14 @@ jQuery(document).ready(function() {
 	    max: 12
 	});
 
+	/* Initalize Flickr Feed */
+	jQuery('#flickr').jflickrfeed({
+		limit: 12,
+		qstrings: {
+			id: '52421339@N00'
+		},
+		itemTemplate: '<div class="col-xs-3 col-sm-2 flickr-photo"><a href="{{image_b}}"target="_blank"> <img src="{{image_m}}" alt="{{title}}" /> </a></div>'
+	});
 	
 /* Click's on Social Feed Icon */	
 		jQuery('#social-feed li').click(function(){

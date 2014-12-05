@@ -9,7 +9,7 @@
 		$message = trim($_POST['message']);
 	}
 		
-	$emailTo = 'your_email@youdomain.com';
+	$emailTo = 'nugent.michael@gmail.com';
 	$subject = 'Contact Form Submission from '.$name;
 	$sendCopy = trim($_POST['sendCopy']);
 	$body = "Name: $name \n\nEmail: $email \n\nMessage: $message";
