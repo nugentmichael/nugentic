@@ -8,9 +8,9 @@ $('<img/>').attr('src', 'http://placehold.it/1920x1080/1a1a1a/F4594E&amptext=192
 		jQuery('h1').animate({opacity: '1', 'padding-top': '0'}, 500,function() {
 			jQuery('h2').animate({opacity: '1', 'padding-top': '0'}, 500,function() {
 				if(jQuery(window).width()<767){	
-					jQuery('#explore').animate({opacity: '1', 'margin-top': '2em'}, 1000);
+					jQuery('#explore').animate({opacity: '1', 'margin-top': '1em'}, 1000);
 				} else {
-					jQuery('#explore').animate({opacity: '1', 'margin-top': '4em'}, 1000);
+					jQuery('#explore').animate({opacity: '1', 'margin-top': '2em'}, 1000);
 				}
 			});
 		});

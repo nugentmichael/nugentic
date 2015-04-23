@@ -74,7 +74,7 @@ height: 100%;
 .no-touch #header{-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;background-attachment: fixed;}
 
 #logo{display:none;}
-#logo img{width:200px; height:auto;}
+#logo img{width:250px; height:auto;}
    
 /* Intro Styles */
    
@@ -119,7 +119,7 @@ section h1,.intro p{margin-bottom: 0; }
 .member{margin-bottom: 2em;min-height: 230px;}
 .member:last-child{margin-bottom: 0em;}
 .member h5{margin-top: 1em;margin-bottom: 0;font-size: 1.125em;}
-.member p{width:373px;margin-bottom: 0;font-size: 0.75em;}
+.member p{margin-bottom: 0;font-size: 1em;}
 
 .member-photo{position:relative; overflow: hidden; margin-bottom: 1.8em;background: #000;}
 .member-photo img{width: 100%;display:block;margin: 0 auto;}
@@ -384,7 +384,7 @@ footer hr{margin:0; margin-bottom:2em;border-bottom:1px solid #cccccc;}
 	
 	.member{margin-bottom: 0;min-height: inherit;}
 	.member h5{font-size: 1.3125em;}
-	.member p{font-size: 1em;}
+	.member p{font-size: 1.1em;}
 	.member-photo{max-height: inherit;}
 	
 	.member ul.social li a{width:2em;height:2em;background-size: 2em;}
