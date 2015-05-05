@@ -276,7 +276,6 @@ jQuery(document).ready(function() {
 					jQuery('#project-top-bar').removeClass('fixed');
 				});
 			}
-		
 		}
 	});
 	

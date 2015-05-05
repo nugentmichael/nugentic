@@ -70,17 +70,17 @@ height: 100%;
    Header Styles
    ========================================================================== */
 
-#header{overflow:hidden;height:auto;background: url('../images/background.jpg') fixed no-repeat; height:100%;}
+#header{overflow:hidden;height:auto;background: url('../images/background.jpg') fixed no-repeat; -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height:100%;}
 .no-touch #header{-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;background-attachment: fixed;}
 
 #logo{display:none;}
-#logo img{width:250px; height:auto;}
+#logo img{width:250px; height:auto; opacity: 0.8;}
    
 /* Intro Styles */
    
-#intro{text-align: center; left: 50%; margin-top: 5%;}  
-#intro h1{margin-top: 0.5em;margin-bottom: 0;color: white;font-size: 1.875em;opacity:0;padding-top: 2em;}
-#intro h2{margin-bottom: 0;font-size: 1.5em;opacity:0;padding-top: 2em;}
+#intro{text-align: center; left: 50%; margin-top: 4%;}  
+#intro h1{margin-top: 0.5em;margin-bottom: 0;color: white;font-size: 1.875em;opacity:0;padding-top: 2em;text-shadow: 1px 1px 1px #000;}
+#intro h2{margin-bottom: 0;font-size: 1.5em;opacity:0;padding-top: 2em;text-shadow: 1px 1px 1px #000;}
 #intro p{color:white;}
 
 #explore {opacity:0;margin-top: 0em;}
@@ -341,10 +341,8 @@ footer hr{margin:0; margin-bottom:2em;border-bottom:1px solid #cccccc;}
 
 
 
-/* Styles for Specific for bigger divices */
+/* Styles for Specific for bigger devices */
 @media (min-width: 992px) {
-	
-
 	
 	.intro{margin-bottom: 6.25em;}
 	
@@ -356,7 +354,7 @@ footer hr{margin:0; margin-bottom:2em;border-bottom:1px solid #cccccc;}
 	
 	/* Header */
 	
-	#logo img{width:300px;}
+	#logo img{width:350px;opacity:0.8;}
 
 	#intro h1{margin-top: 1.25em;font-size: 3em;}
 	#intro h2{font-size: 2.5em;}
