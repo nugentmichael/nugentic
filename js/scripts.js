@@ -7,7 +7,7 @@ $('<img/>').attr('src', 'http://placehold.it/1920x1080/1a1a1a/F4594E&amptext=192
 	jQuery('#logo').fadeIn(600, function() {
 		jQuery('h1').animate({opacity: '1', 'padding-top': '0'}, 500,function() {
 			jQuery('h2').animate({opacity: '1', 'padding-top': '0'}, 500,function() {
-				if(jQuery(window).width()<767){	
+				if(jQuery(window).width()<767){
 					jQuery('#explore').animate({opacity: '1', 'margin-top': '1em'}, 1000);
 				} else {
 					jQuery('#explore').animate({opacity: '1', 'margin-top': '2em'}, 1000);
@@ -26,27 +26,27 @@ textCenter();
     });
 
     $('.text-container').css({
- 
+
         left: ($(window).width() - $('.text-container').outerWidth())/2,
         top: ($(window).height() - $('.text-container').outerHeight())/2
 
     });
 
 }
-	
+
 jQuery(document).ready(function() {
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	Navigation
 	/*-----------------------------------------------------------------------------------*/
-	
+
 	var animate='down';
-	
+
 	jQuery(window).bind('scroll', function () {
-	
+
 		/* Animation for Top Navigation */
 		var scrollTop = jQuery(window).scrollTop();
-		
+
 		if (scrollTop > jQuery('#me').offset().top-60 && animate == 'down') {
 			animate='up';
 			jQuery('#top-bar').stop().animate({top:'0'}, 300);
@@ -54,7 +54,7 @@ jQuery(document).ready(function() {
 			animate='down';
 			jQuery('#top-bar').stop().animate({top:'-75px'}, 300);
 		}
-		
+
 		/* Update Section on Top-Bar */
 		jQuery('section').each(function(){
 			if (scrollTop > jQuery(this).offset().top-60){
@@ -68,104 +68,104 @@ jQuery(document).ready(function() {
 			}
 		});
 	});
-	
+
 	/* Responsive Menu Click */
 	jQuery('#menu-mobile').click(function(){
 		if ( jQuery("#top-navigation ul").is(":visible") ) {
 		    jQuery("#top-navigation ul").slideUp(500);
 		   	jQuery('#menu-mobile').removeClass('active');
-		} else { 
+		} else {
 		   	jQuery("#top-navigation ul").slideDown(500);
 		   	jQuery('#menu-mobile').addClass('active');
 		}
 	});
-	
+
 	/* On Resize show menu on desktop if hidden */
 	jQuery(window).resize(function() {
 		textCenter();
-	    if(jQuery(window).width()>992){	
+	    if(jQuery(window).width()>992){
 			if (jQuery("#top-navigation ul").is(":hidden") ) {
 			    jQuery("#top-navigation ul").show();
-			   	jQuery('#menu-mobile').removeClass('active');		
+			   	jQuery('#menu-mobile').removeClass('active');
 			}
 	    } else {
 	    	if (jQuery("#top-navigation ul").is(":visible") ) {
 			    jQuery("#top-navigation ul").hide();
-			   	jQuery('#menu-mobile').removeClass('active');		
+			   	jQuery('#menu-mobile').removeClass('active');
 			}
 
 
 	    }
 	});
-	
+
 	/*-----------------------------------------------------------------------------------*/
 	/*	Smooth Scroll - Navigation + .scroll items
 	/*-----------------------------------------------------------------------------------*/
-	
+
 	jQuery('#top-navigation li').bind('click',function(event){
 	    var anchor = jQuery(this).find('a');
-	    
+
 	    jQuery('#top-navigation li').removeClass('active');
 	    jQuery(this).addClass('active');
-	
+
 	    jQuery('html, body').stop().animate({
 	        scrollTop: jQuery(anchor.attr('href')).offset().top-50
 	    }, 1500,'easeInOutExpo');
-	    
+
 	    /* If Mobile hide menu on select */
-	    if(jQuery(window).width()<=767){	
+	    if(jQuery(window).width()<=767){
 		    jQuery("#top-navigation ul").slideUp(500);
 			jQuery('#menu-mobile').removeClass('active');
 	    }
-	    
+
 	    event.preventDefault();
 	});
-	
+
 	jQuery('.scroll').bind('click',function(event){
 	    var anchor = jQuery(this);
-	
+
 	    jQuery('html, body').stop().animate({
 	        scrollTop: jQuery(anchor.attr('href')).offset().top-50
 	    }, 1500,'easeInOutExpo');
-	    
+
 	    /* If Mobile hide menu on select */
-	    if(jQuery(window).width()<=767){	
+	    if(jQuery(window).width()<=767){
 		    jQuery("#top-navigation ul").slideUp(500);
 			jQuery('#menu-mobile').removeClass('active');
 	    }
-	    
+
 	    event.preventDefault();
 	});
-	
+
 	/*-----------------------------------------------------------------------------------*/
 	/*	Studio
 	/*-----------------------------------------------------------------------------------*/
-	
-	/* Initialize Slider */	
+
+	/* Initialize Slider */
 	var swiper = jQuery('#swiper').swiper({
 		loop:true,
 		grabCursor: true,
 		autoPlay: 4000
 	});
-	
+
 	/* On Load swiper height should adjust to img size */
 	jQuery('.swiper-slide img').load(function() {
 		jQuery('#swiper').height(jQuery('.swiper-slide img').height());
 		jQuery('.swiper-wrapper').height(jQuery('.swiper-slide img').height());
 	});
-	
+
 	/* On Resize swiper height should adjust to img size */
 	jQuery(window).resize(function() {
 		jQuery('#swiper').height(jQuery('.swiper-slide img').height());
 		jQuery('.swiper-wrapper').height(jQuery('.swiper-slide img').height());
 	});
-	
+
 	/*-----------------------------------------------------------------------------------*/
 	/*	Services
 	/*-----------------------------------------------------------------------------------*/
-	
+
 	var curSkills="branding";
-	
+
 	/* Services Animations */
 	jQuery('.service').click(function(){
 		jQuery('.service').removeClass('active');
@@ -176,16 +176,16 @@ jQuery(document).ready(function() {
 		jQuery('html, body').stop().animate({
 		    scrollTop: jQuery('#services-list').offset().top-100
 		}, 1000,'easeInOutExpo');
-		
+
 		jQuery("#"+target+"-skills .expand").each(function() {
 			jQuery(this).css({width:0}).animate({width:jQuery(this).attr('data-width')}, 2000);
 		});
 	});
-	
+
 	/*-----------------------------------------------------------------------------------*/
 	/*	Works
 	/*-----------------------------------------------------------------------------------*/
-	
+
 	var curWork,nextWork,previousWork,offsetWork;
 
 	/* Function to load project */
@@ -209,9 +209,9 @@ jQuery(document).ready(function() {
 	    jQuery('#project').load(curWork+".html");
 		jQuery("#previous-project-name").load("work-"+previousWork+".html #project-title");
 		jQuery("#next-project-name").load("work-"+nextWork+".html #project-title");
-	
+
 	});
-	
+
 	/* Function to close project */
 	jQuery('#close-project').click(function(){
 		jQuery('iframe').attr('src', jQuery('iframe').attr('src')); // required to stop video's on exit project
@@ -219,15 +219,15 @@ jQuery(document).ready(function() {
 			jQuery("#page").fadeIn(500);
 			window.scrollTo(0,offsetWork-75);
 		});
-		
+
 	});
-	
+
 	/* Function to load next project */
 	jQuery('#next-project').click(function(){
 		var cur = nextWork;
 		jQuery("#next-project-name").animate({"right":"8em","opacity":"0"}, 500, function(){
 			jQuery("#project").fadeOut(500,function(){
-				jQuery('#project').load("work-"+cur+".html");	
+				jQuery('#project').load("work-"+cur+".html");
 				nextWork=cur+1;
 				previousWork=cur-1;
 				if (previousWork == 0){
@@ -242,13 +242,13 @@ jQuery(document).ready(function() {
 			});
 		});
 	});
-	
+
 	/* Function to load previous project */
 	jQuery('#previous-project').click(function(){
 		var cur = previousWork;
 		jQuery("#previous-project-name").animate({"left":"8em","opacity":"0"}, 500, function(){
 			jQuery("#project").fadeOut(500,function(){
-				jQuery('#project').load("work-"+cur+".html");	
+				jQuery('#project').load("work-"+cur+".html");
 				nextWork=cur+1;
 				previousWork=cur-1;
 				if (previousWork == 0){
@@ -258,17 +258,17 @@ jQuery(document).ready(function() {
 					nextWork=1;
 				}
 				jQuery("#previous-project-name").load("work-"+previousWork+".html #project-title");
-				jQuery("#next-project-name").load("work-"+nextWork+".html #project-title");	
+				jQuery("#next-project-name").load("work-"+nextWork+".html #project-title");
 				jQuery("#project").fadeIn(500);
 			});
 		});
 	});
-	
+
 	/* Works Top Bar */
 	jQuery(window).bind('scroll', function () {
-		if(jQuery(window).width()<767 && jQuery("#project-page").is(":visible")){	
+		if(jQuery(window).width()<767 && jQuery("#project-page").is(":visible")){
 			var scrollTop = jQuery(window).scrollTop();
-			
+
 			if (scrollTop > jQuery('#project-details').offset().top-125) {
 				jQuery('#project-top-bar').addClass('fixed').stop().animate({top:0},500);
 			} else if(scrollTop < jQuery('#project-details').offset().top-125){
@@ -278,14 +278,14 @@ jQuery(document).ready(function() {
 			}
 		}
 	});
-	
+
 	/* Filter for Works */
 	jQuery('#work-container').mixitup({
 		targetDisplayGrid: 'block' // required to fix bug in Chrome with images height
 	});
 
 	/* If we're on medium or large device animate next and previous project name while hovering arrow's */
-	if(jQuery(window).width()>767){	
+	if(jQuery(window).width()>767){
 		jQuery('#next-project').mouseenter(function() {
 			jQuery("#next-project-name").stop().animate({"right":"4em","opacity":"1"}, 500);
 		}).mouseleave(function() {
@@ -297,7 +297,7 @@ jQuery(document).ready(function() {
 			jQuery("#previous-project-name").animate({"left":"8em","opacity":"0"}, 500);
 		});
 	}
-	
+
 	/* Creates the filter menu for mobile version */
 	$('#work-filter ul').each(function(){
 		var select=$(document.createElement('select')).insertBefore($(this).parent()).addClass('visible-xs');;
@@ -305,19 +305,19 @@ jQuery(document).ready(function() {
 			option=$(document.createElement('option')).appendTo(select).val(this.href).html($(this).html()).addClass($(this).attr('data-filter'));
 		});
 	});
-	
+
 	/* Filtering for Select */
 	$('select').on('change',function(){
 		jQuery('#work-container').mixitup('filter',jQuery(this).find('option:selected').attr('class'));
 	});
-	
+
 	/*-----------------------------------------------------------------------------------*/
 	/*	Social
 	/*-----------------------------------------------------------------------------------*/
 
 	/* Initalize Twitter Feed */
 	$('#twitter').tweetable({
-		username: 'michaelnugent', 
+		username: 'michaelnugent',
 		time: true,
 		limit: 5,
 		replies: false,
@@ -342,10 +342,10 @@ jQuery(document).ready(function() {
 			ticker();
 		}
 	});
-	
+
 	/* Initalize Instagram Feed */
 	jQuery.fn.spectragram.accessData={accessToken:'2136707.12e2743.9576ae17af4e4ad4aebf6b72433c01fd',clientID:'12e27430fe054c72839c5f16f86177e1'};
-	
+
 	jQuery('#instagram').spectragram('getUserFeed',{
 	    query: 'michaelnugent',
 	    max: 12
@@ -359,8 +359,8 @@ jQuery(document).ready(function() {
 		},
 		itemTemplate: '<div class="col-xs-3 col-sm-2 flickr-photo"><a href="{{image_b}}"target="_blank"> <img src="{{image_m}}" alt="{{title}}" /> </a></div>'
 	});
-	
-/* Click's on Social Feed Icon */	
+
+/* Click's on Social Feed Icon */
 		jQuery('#social-feed li').click(function(){
 			jQuery('#social-feed li').removeClass('active');
 			jQuery(this).addClass('active');
@@ -375,12 +375,12 @@ jQuery(document).ready(function() {
 				jQuery('.feed').hide();
 				jQuery('#flickr').fadeIn(1000);
 			}
-		});	
+		});
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	Contacts
-	/*-----------------------------------------------------------------------------------*/	
-		
+	/*-----------------------------------------------------------------------------------*/
+
 	/* Validation Form with AJAX while typing for inputs */
 	jQuery('input').bind('input propertychange', function() {
 		jQuery(this).parent().find('.error').remove();
@@ -390,38 +390,38 @@ jQuery(document).ready(function() {
 			if (jQuery(this).val() == "" || jQuery(this).val() == " ") {
 				jQuery(this).after("<span class='error'></span>");
 				jQuery(this).parent().find('.error').fadeIn('slow');
-			} else if (!checkEmail.test(jQuery(this).val())) { 
+			} else if (!checkEmail.test(jQuery(this).val())) {
 				jQuery(this).after("<span class='error'></span>");
 				jQuery(this).parent().find('.error').fadeIn('slow');
 			} else {
 				jQuery(this).after("<span class='valid'></span>");
-				jQuery(this).parent().find('.valid').fadeIn('slow');	
-			}    
+				jQuery(this).parent().find('.valid').fadeIn('slow');
+			}
 	    } else {
 			if(jQuery(this).val() == "" || jQuery(this).val() == " "){
 				jQuery(this).after("<span class='error'></span>");
-				jQuery(this).parent().find('.error').fadeIn('slow');			   
+				jQuery(this).parent().find('.error').fadeIn('slow');
 			} else {
 				jQuery(this).after("<span class='valid'></span>");
-				jQuery(this).parent().find('.valid').fadeIn('slow');	
+				jQuery(this).parent().find('.valid').fadeIn('slow');
 			}
 	    }
 	});
-	
+
 	/* Validation Form with AJAX while typing for textarea */
 	jQuery('textarea').bind('input propertychange', function() {
 		jQuery(this).parent().find('.error').remove();
-		jQuery(this).parent().find('.valid').remove();	
+		jQuery(this).parent().find('.valid').remove();
 		if(jQuery(this).val() == "" || jQuery(this).val() == " "){
 			jQuery(this).after("<span class='error'></span>");
-			jQuery(this).parent().find('.error').fadeIn('slow');			   
+			jQuery(this).parent().find('.error').fadeIn('slow');
 		} else {
 			jQuery(this).after("<span class='valid'></span>");
-			jQuery(this).parent().find('.valid').fadeIn('slow');	
+			jQuery(this).parent().find('.valid').fadeIn('slow');
 		}
-	});	
-	
-	
+	});
+
+
 	/* Validation Form with AJAX on Submit */
 	jQuery('#submit').click(function(){
 		jQuery('span.error').fadeOut('slow');
@@ -430,44 +430,44 @@ jQuery(document).ready(function() {
 		jQuery('#error').hide();
 		jQuery('#timedout').hide();
 		jQuery('#state').hide();
-		
+
 		var error = false;
-		
-		var name = jQuery('#name').val(); 
+
+		var name = jQuery('#name').val();
 		if(name == "" || name == " ") {
 			jQuery('#name').after("<span class='error'></span>");
 			jQuery('#name').parent().find('.error').fadeIn('slow');
-			error = true; 
+			error = true;
 		} else {
 			jQuery('#name').after("<span class='valid'></span>");
-			jQuery('#name').parent().find('.valid').fadeIn('slow');			
+			jQuery('#name').parent().find('.valid').fadeIn('slow');
 		}
-		
-		var checkEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/; 
+
+		var checkEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 		var email = jQuery('#email').val();
 		if (email == "" || email == " ") {
 			jQuery('#email').after("<span class='error'></span>");
 			jQuery('#email').parent().find('.error').fadeIn('slow');
 			error = true;
-		} else if (!checkEmail.test(email)) { 
+		} else if (!checkEmail.test(email)) {
 			jQuery('#email').after("<span class='error'></span>");
 			jQuery('#email').parent().find('.error').fadeIn('slow');
 			error = true;
 		} else {
 			jQuery('#email').after("<span class='valid'></span>");
-			jQuery('#email').parent().find('.valid').fadeIn('slow');			
+			jQuery('#email').parent().find('.valid').fadeIn('slow');
 		}
-		
-		var message = jQuery('#message').val(); 
+
+		var message = jQuery('#message').val();
 		if(message == "" || message == " ") {
 			jQuery('#message').after("<span class='error'></span>");
 			jQuery('#message').parent().find('.error').fadeIn('slow');
-			error = true; 
+			error = true;
 		} else {
 			jQuery('#message').after("<span class='valid'></span>");
-			jQuery('#message').parent().find('.valid').fadeIn('slow');			
+			jQuery('#message').parent().find('.valid').fadeIn('slow');
 		}
-		
+
 		if(error == true) {
 			jQuery('#error').fadeIn('slow');
 			setTimeout(function() {
@@ -475,13 +475,13 @@ jQuery(document).ready(function() {
 			}, 3000);
 			return false;
 		}
-		
+
 		var data_string = jQuery('#contact-form').serialize();
-		
+
 		jQuery.ajax({
 			type: "POST",
 			url: "lib/sendMail.php",
-			data: {name:name,email:email,message:message}, 
+			data: {name:name,email:email,message:message},
 			timeout: 6000,
 			error: function(request,error) {
 				if (error == "timeout") {
@@ -508,7 +508,12 @@ jQuery(document).ready(function() {
 				}, 3000);
 			}
 		});
-		
+
 		return false;
 	});
 });
+
+console.log('%c 🚨 Hello stranger! 🚨', 'font-size: 36px; color: red;');
+console.log('%c Fancy seeing you here... 🤔', 'font-size: 21px;');
+console.log('%c The code on my site has been not loved or cared for over in years. 😔', 'font-size: 21px;');
+console.log('%c Check out my portfolio pieces instead to see some of my more recent work. 😎', 'font-size: 21px;');
