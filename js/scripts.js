@@ -4,23 +4,37 @@
 
 /* Starting Animation on Load */
 // $('<img/>').attr('src', '//placehold.it/1920x1080/1a1a1a/F4594E&amptext=1920x1080').load(function() {
-	jQuery('#logo').fadeIn(600, function() {
-		jQuery('h1').animate({opacity: '1', 'padding-top': '0'}, 500,function() {
-			jQuery('h2').animate({opacity: '1', 'padding-top': '0'}, 500,function() {
-				if(jQuery(window).width()<767){
-					jQuery('#explore').animate({opacity: '1', 'margin-top': '1em'}, 1000);
-				} else {
-					jQuery('#explore').animate({opacity: '1', 'margin-top': '2em'}, 1000);
-				}
-			});
-		});
-	});
+jQuery('#logo').fadeIn(600, function() {
+    jQuery('h1').animate({
+        opacity: '1',
+        'padding-top': '0'
+    }, 500, function() {
+        jQuery('h2').animate({
+            opacity: '1',
+            'padding-top': '0'
+        }, 500, function() {
+            if (jQuery(window).width() < 767) {
+                jQuery('#explore').animate({
+                    opacity: '1',
+                    'margin-top': '1em'
+                }, 1000);
+            } else {
+                jQuery('#explore').animate({
+                    opacity: '1',
+                    'margin-top': '2em'
+                }, 1000);
+            }
+        });
+    });
+});
 // });
 
 textCenter();
 
 function textCenter() {
-    $('.text-container').css({position: 'absolute'});
+    $('.text-container').css({
+        position: 'absolute'
+    });
 
     $('.text-container').css({
 
@@ -142,7 +156,11 @@ jQuery(document).ready(function() {
 	/*-----------------------------------------------------------------------------------*/
 
     /* Initialize Slider */
-    var swiper = jQuery('#swiper').swiper({loop: true, grabCursor: true, autoPlay: 4000});
+    var swiper = jQuery('#swiper').swiper({
+        loop: true,
+        grabCursor: true,
+        autoPlay: 4000
+    });
 
     /* On Load swiper height should adjust to img size */
     jQuery('.swiper-slide img').load(function() {
@@ -176,7 +194,9 @@ jQuery(document).ready(function() {
         }, 1000, 'easeInOutExpo');
 
         jQuery("#" + target + "-skills .expand").each(function() {
-            jQuery(this).css({width: 0}).animate({
+            jQuery(this).css({
+                width: 0
+            }).animate({
                 width: jQuery(this).attr('data-width')
             }, 2000);
         });
@@ -546,7 +566,7 @@ jQuery(document).ready(function() {
     });
 });
 
-console.log('%c 🚨 Hello stranger! 🚨', 'font-size: 36px; color: red;');
-console.log('%c Fancy seeing you here... 🤔', 'font-size: 21px;');
-console.log('%c The code on my site has been not loved or cared for over in years. 😔', 'font-size: 21px;');
-console.log('%c Check out my portfolio pieces instead to see some of my more recent work. 😎', 'font-size: 21px;');
+console.log('%c 🚨 Hello stranger! 🚨', 'font-size: 21px; color: red;');
+console.log('%c Fancy seeing you here... 🤔', 'font-size: 12px;');
+console.log('%c The code on my site has been not loved or cared for over in years. 😔', 'font-size: 12px;');
+console.log('%c Check out my portfolio pieces instead to see some of my more recent work. 😎', 'font-size: 12px;');
