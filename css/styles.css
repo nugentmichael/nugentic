@@ -758,9 +758,13 @@ section#studio {
 
 /* MixUp Filtering */
 
-#work-container .mix {
+/* #work-container .mix {
     display: none;
     opacity: 0;
+} */
+
+#work-container .row div:nth-of-type(3n + 1) {
+    clear: left;
 }
 
 #work-container [class*="column"]+[class*="column"]:last-child {
