@@ -19,8 +19,7 @@ body,
     margin: 0px;
     padding: 0px;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
@@ -93,8 +92,6 @@ time {
 .smooth,
 .smooth img {
     -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
 
@@ -170,21 +167,26 @@ only screen and (max-width: 767px) {
    ========================================================================== */
 
 #header {
+    position: relative;
     overflow: hidden;
     height: auto;
-    background: url('../images/background-2016.jpg') fixed no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background: url('../images/background-2019.jpg') fixed no-repeat;
     background-size: cover;
     background-position: center;
     height: 100%;
 }
 
+#header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .no-touch #header {
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     background-attachment: unset;
 }
@@ -210,7 +212,7 @@ only screen and (max-width: 767px) {
 #intro h1 {
     margin-top: 0.5em;
     margin-bottom: 0;
-    color: white;
+    color: #f2f2f2;
     font-size: 1.875em;
     opacity: 0;
     padding-top: 2em;
@@ -241,12 +243,9 @@ only screen and (max-width: 767px) {
 #explore a i {
     font-size: 6em;
     margin: 0 auto;
-    color: white;
+    color: #FFF;
     cursor: pointer;
-    color: white;
     -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
@@ -282,8 +281,6 @@ only screen and (max-width: 767px) {
 #top-navigation li a {
     text-decoration: none;
     -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
@@ -374,8 +371,6 @@ section h1,
     background-color: rgb(244, 89, 78);
     background-color: rgba(244, 89, 78, 0);
     -webkit-transition: background-color 0.4s ease-in-out;
-    -moz-transition: background-color 0.4s ease-in-out;
-    -o-transition: background-color 0.4s ease-in-out;
     transition: background-color 0.4s ease-in-out;
     /* Custom */
     border-radius: 100%;
@@ -394,8 +389,6 @@ section h1,
     height: 100%;
     opacity: 0;
     -webkit-transition: opacity 0.4s ease-in-out;
-    -moz-transition: opacity 0.4s ease-in-out;
-    -o-transition: opacity 0.4s ease-in-out;
     transition: opacity 0.4s ease-in-out;
 }
 
@@ -483,8 +476,8 @@ section#studio {
 
 #studio,
 #contacts {
-	background: #f2f2f2;
-	overflow-x: hidden;
+    background: #f2f2f2;
+    overflow-x: hidden;
 }
 
 .swiper-slide:not(.swiper-slide-active) img {
@@ -504,9 +497,6 @@ section#studio {
     overflow: hidden;
     margin: 0 auto;
     -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
     backface-visibility: hidden;
     /* Fix of Webkit flickering */
 }
@@ -515,25 +505,15 @@ section#studio {
     position: relative;
     width: 100%;
     -webkit-transition-timing-function: ease;
-    -moz-transition-timing-function: ease;
-    -ms-transition-timing-function: ease;
-    -o-transition-timing-function: ease;
     transition-timing-function: ease;
     -webkit-transition-duration: 0s;
-    -moz-transition-duration: 0s;
-    -ms-transition-duration: 0s;
-    -o-transition-duration: 0s;
     transition-duration: 0s;
     -webkit-transition-property: -webkit-transform, left, top;
-    -moz-transition-property: -moz-transform, left, top;
-    -ms-transition-property: -ms-transform, left, top;
-    -o-transition-property: -o-transform, left, top;
+    -webkit-transition-property: left, top, -webkit-transform;
+    transition-property: left, top, -webkit-transform;
     transition-property: transform, left, top;
+    transition-property: transform, left, top, -webkit-transform;
     -webkit-transform: translate3d(0px, 0, 0);
-    -moz-transform: translate3d(0px, 0, 0);
-    -ms-transform: translate3d(0px, 0, 0);
-    -o-transform: translate3d(0px, 0, 0);
-    -o-transform: translate(0px, 0px);
     transform: translate3d(0px, 0, 0);
 }
 
@@ -586,8 +566,6 @@ section#studio {
     color: #999;
     font-size: 1.3125em;
     -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
 
@@ -687,8 +665,6 @@ section#studio {
     width: 100%;
     top: 0;
     -webkit-transition: top 0.3s ease-in-out;
-    -moz-transition: top 0.3s ease-in-out;
-    -o-transition: top 0.3s ease-in-out;
     transition: top 0.3s ease-in-out;
     display: block;
     -webkit-filter: grayscale(100%);
@@ -701,8 +677,6 @@ section#studio {
     font-weight: bold;
     font-size: 1.3125em;
     -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
@@ -718,8 +692,6 @@ section#studio {
 #work-filter ul {
     margin-bottom: 2em;
     -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
@@ -734,8 +706,6 @@ section#studio {
     height: 2.5em;
     background-color: white;
     -webkit-transition: bottom 0.3s ease-in-out;
-    -moz-transition: bottom 0.3s ease-in-out;
-    -o-transition: bottom 0.3s ease-in-out;
     transition: bottom 0.3s ease-in-out;
 }
 
@@ -808,8 +778,6 @@ section#studio {
     color: black;
     opacity: 0.5;
     -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
 
@@ -872,12 +840,9 @@ section#studio {
     position: relative;
     display: block;
     -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
     width: 100%;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
     -webkit-filter: grayscale(100%);
     filter: url("data:image/svg+xml;filter: gray;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
@@ -922,6 +887,7 @@ textarea {
     outline: none;
     border: none;
     -webkit-border-radius: 0px;
+    -webkit-box-shadow: none;
     box-shadow: none;
     color: #1a1a1a;
 }
@@ -930,7 +896,6 @@ input[type="text"]:focus,
 textarea:focus {
     background: #e6e6e6;
     -webkit-transition: all 0.15s linear;
-    -moz-transition: all 0.15s linear;
     transition: all 0.15s linear;
 }
 
@@ -942,8 +907,6 @@ textarea:focus {
     background-color: #f4594e;
     color: white;
     -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
 
@@ -1041,8 +1004,6 @@ footer hr {
     color: black;
     opacity: 0.5;
     -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
 
@@ -1070,6 +1031,7 @@ footer hr {
 
 #project-page .button {
     border: none;
+    -webkit-box-shadow: inherit;
     box-shadow: inherit;
 }
 
@@ -1171,112 +1133,141 @@ footer hr {
     .intro {
         margin-bottom: 6.25em;
     }
+
     /* All Section Styles */
     section {
         padding-top: 6.25em;
         padding-bottom: 3.75em;
     }
+
     section h1 {
         font-size: 3.125em;
     }
+
     section .intro p {
         font-size: 1.5em;
     }
+
     /* Header */
     #logo img {
         width: 350px;
         opacity: 0.8;
     }
+
     #intro h1 {
         margin-top: 1.25em;
         font-size: 3em;
     }
+
     #intro h2 {
         font-size: 2.5em;
     }
+
     #explore {
         margin-top: 0em;
     }
+
     /* Navigation */
     #top-navigation ul {
         float: right;
     }
+
     #top-navigation ul {
         display: none;
         font-size: 1.285em;
         margin-top: 0.3em;
     }
+
     /* Logo */
     #logo-lettering {
         margin-top: 0.3em;
     }
+
     /* Top Navigation */
     #top-bar {
         top: -60px;
         height: 3.75em;
     }
+
     #top-navigation {
         margin-top: 1em;
     }
+
     #top-navigation ul {
         display: inherit;
     }
+
     #top-navigation li {
         width: inherit;
     }
+
     /* Team */
     .member {
         margin-bottom: 0;
         min-height: inherit;
     }
+
     .member h5 {
         font-size: 1.3125em;
     }
+
     .member p {
         font-size: 1.1em;
     }
+
     .member-photo {
         max-height: inherit;
     }
+
     .member ul.social li a {
         width: 2em;
         height: 2em;
         background-size: 2em;
     }
+
     /* Services */
     .service img {
         margin-top: 0;
         width: auto;
         height: 100px;
     }
+
     /* Feed */
     .instagram-placeholder,
     .flickr-photo {
         margin-bottom: inherit;
     }
+
     #twitter {
         height: 16em;
     }
+
     #twitter ul.tweetList li {
         height: 7em;
     }
+
     /* Contacts */
     #contacts {
         padding-bottom: 0;
     }
+
     /* Project */
     #project-details {
         padding: 5em 0;
     }
+
     #project-details #project-description {
         margin-bottom: 0;
     }
+
     #project-sidebar {
         text-align: right;
     }
+
     #project-top-bar {
         height: auto;
     }
+
     #next-project,
     #previous-project,
     #close-project,
@@ -1285,6 +1276,7 @@ footer hr {
         position: fixed;
         z-index: 999;
     }
+
     #close-project {
         top: 0.4125em;
         right: 1.25em;
@@ -1292,14 +1284,17 @@ footer hr {
         height: 1.5em;
         background-size: 1.5em;
     }
+
     #next-project {
         top: 18.2em;
         right: 1.25em;
     }
+
     #previous-project {
         top: 18.2em;
         left: 1.25em;
     }
+
     #next-project-name,
     #previous-project-name {
         background-color: rgb(244, 89, 78);
@@ -1309,14 +1304,17 @@ footer hr {
         display: inherit;
         color: white;
     }
+
     #next-project-name {
         top: 18.8em;
         right: 8em;
     }
+
     #previous-project-name {
         top: 18.8em;
         left: 8em;
     }
+
     #next-project-name h2,
     #previous-project-name h2 {
         color: white;
@@ -1324,15 +1322,15 @@ footer hr {
         padding: 0;
         margin: 0;
     }
+
     #next-project,
     #previous-project,
     #close-project {
         opacity: 0.6;
         -webkit-transition: opacity 0.3s ease-in-out;
-        -moz-transition: opacity 0.3s ease-in-out;
-        -o-transition: opacity 0.3s ease-in-out;
         transition: opacity 0.3s ease-in-out;
     }
+
     #next-project:hover,
     #previous-project:hover,
     #close-project:hover {
@@ -1344,8 +1342,6 @@ footer hr {
     #header {
         background-attachment: unset;
         -webkit-transition: all 0.4s ease-in-out;
-        -moz-transition: all 0.4s ease-in-out;
-        -o-transition: all 0.4s ease-in-out;
         transition: all 0.4s ease-in-out;
     }
 }
