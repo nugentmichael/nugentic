@@ -482,7 +482,7 @@ section#studio {
 
 .swiper-slide:not(.swiper-slide-active) img {
     -webkit-filter: grayscale(100%);
-    filter: url("data:image/svg+xml;filter: gray;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: grayscale(100%);
 }
 
 /* Swiper - Mobile Touch Slider CSS
@@ -668,7 +668,7 @@ section#studio {
     transition: top 0.3s ease-in-out;
     display: block;
     -webkit-filter: grayscale(100%);
-    filter: url("data:image/svg+xml;filter: gray;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: grayscale(100%);
 }
 
 #work-filter {
@@ -718,7 +718,7 @@ section#studio {
 .touch .work img {
     top: -2.5em;
     -webkit-filter: grayscale(0%);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: grayscale(0%);
 }
 
 .no-touch .work:hover .work-info,
@@ -845,7 +845,7 @@ section#studio {
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
     -webkit-filter: grayscale(100%);
-    filter: url("data:image/svg+xml;filter: gray;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: grayscale(100%);
 }
 
 #flickr img:hover,
@@ -853,7 +853,7 @@ section#studio {
     opacity: 0.8;
     filter: alpha(opacity=80);
     -webkit-filter: grayscale(0%);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    filter: grayscale(0%);
 }
 
 .instagram-placeholder,
