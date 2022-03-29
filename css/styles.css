@@ -736,8 +736,7 @@ section#studio {
 #work-container .row {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-column-gap: 15px;
-	grid-row-gap: 15px;
+	grid-column-gap: 25px;
 	justify-items: center;
 }
 
