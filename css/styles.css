@@ -727,17 +727,24 @@ section#studio {
 
 /* MixUp Filtering */
 
-/* #work-container .mix {
-    display: none;
-    opacity: 0;
-} */
-
-#work-container .row div:nth-of-type(3n + 1) {
-	clear: left;
+#work-container .mix {
+	display: none;
+	opacity: 0;
+	width: 100%;
 }
 
-#work-container [class*='column'] + [class*='column']:last-child {
-	float: left;
+#work-container .row {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: 15px;
+	grid-row-gap: 15px;
+	justify-items: center;
+}
+
+#work-container::before,
+#work-container .row::before {
+	display: unset;
+	content: unset;
 }
 
 /* ==========================================================================
@@ -1339,5 +1346,9 @@ footer hr {
 		background-attachment: unset;
 		-webkit-transition: all 0.4s ease-in-out;
 		transition: all 0.4s ease-in-out;
+	}
+
+	#work-container .row {
+		grid-template-columns: auto;
 	}
 }
