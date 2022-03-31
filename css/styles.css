@@ -170,8 +170,9 @@ time {
 	justify-content: center;
 	position: relative;
 	overflow: hidden;
-	background: url('../images/background-2019.jpg') center center/cover no-repeat fixed;
-	height: 100%;
+	background: url('../images/background-2019.jpg') center center/cover
+		no-repeat fixed;
+	height: 100vh;
 }
 
 #header::before {
@@ -1207,11 +1208,13 @@ footer hr {
 	}
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
 	#header {
-		transition: all 0.4s ease-in-out;
+		background-attachment: unset;
 	}
+}
 
+@media (max-width: 767px) {
 	#work-container .row {
 		grid-template-columns: auto;
 	}
