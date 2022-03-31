@@ -172,6 +172,7 @@ time {
 	overflow: hidden;
 	background: url('../images/background-2019.jpg') center center/cover
 		no-repeat fixed;
+	height: 100%;
 	height: 100vh;
 }
 
@@ -185,8 +186,7 @@ time {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
-.no-touch #header {
-	background-size: cover;
+.touch #header {
 	background-attachment: unset;
 }
 
@@ -1205,12 +1205,6 @@ footer hr {
 	#previous-project:hover,
 	#close-project:hover {
 		opacity: 1;
-	}
-}
-
-@media (max-width: 1024px) {
-	#header {
-		background-attachment: unset;
 	}
 }
 
